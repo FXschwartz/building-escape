@@ -22,8 +22,6 @@ void UOpenDoor::BeginPlay() {
 	owner -> SetActorRotation(newRotation);
 	UE_LOG(LogTemp, Warning, TEXT("Door rotation %s"), *ownerRotation);
 	
-	// ...
-	
 }
 
 
