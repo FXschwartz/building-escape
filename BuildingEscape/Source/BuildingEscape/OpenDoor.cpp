@@ -1,7 +1,7 @@
 // Copyright Preston Schwartz 2019
 
 #include "OpenDoor.h"
-
+#include "GameFramework/Actor.h"
 
 // Sets default values for this component's properties
 UOpenDoor::UOpenDoor() {
@@ -16,7 +16,12 @@ UOpenDoor::UOpenDoor() {
 // Called when the game starts
 void UOpenDoor::BeginPlay() {
 	Super::BeginPlay();
-
+	AActor* owner = GetOwner();
+	FString ownerRotation = owner -> GetActorRotation().ToString();
+	FRotator newRotation = FRotator(0.0f, -60.0f, 00.0f);
+	owner -> SetActorRotation(newRotation);
+	UE_LOG(LogTemp, Warning, TEXT("Door rotation %s"), *ownerRotation);
+	
 	// ...
 	
 }
